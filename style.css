@@ -96,6 +96,6 @@ body {
 }
 
 /* for circle (set) */
-.game:not(.x).x {
+.game:not(.x).circle {
 	background: radial-gradient(var(--color-set) 60%, transparent 60%);
 }
