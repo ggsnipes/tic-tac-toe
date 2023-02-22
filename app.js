@@ -44,6 +44,7 @@ function gameStart () {
 function handleGameClick(event) {
     let div = event.target
     const currentClass = isPlayer2Turn ? player2Class : player1Class
+    
     placeMark(div, currentClass)
     if (checkWin(currentClass)) {
         endGame(false)
@@ -88,15 +89,15 @@ function placeMark (div, currentClass) {
 
 
 //give a hovering effect to the tiles
-function setBoardHoverClass () {
-    board.classList.remove(player1Class)
-    board.classList.remove(player2Class)
-    if (isPlayer2Turn) {
-        board.classList.add(player2Class)
-    } else {
-        board.classList.add(player1Class)
-    }
-}
+// function setBoardHoverClass () {
+//     board.classList.remove(player1Class)
+//     board.classList.remove(player2Class)
+//     if (isPlayer2Turn) {
+//         board.classList.add(player2Class)
+//     } else {
+//         board.classList.add(player1Class)
+//     }
+// }
 
 
 //swap turns
