@@ -3,7 +3,7 @@
     /* border: 1px solid red; */
 }
 
-section {
+.board {
     display: flex;
     /* grid-template-columns: 1fr 1fr 1fr;
     margin: 1em; */
