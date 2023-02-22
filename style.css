@@ -1,5 +1,19 @@
 * {
     box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1em;
 }
 
 
+
+.game {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+
+}
