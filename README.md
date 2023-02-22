@@ -29,4 +29,4 @@ Game project, for General Assembly ANZ.
 
 ## How to run
 
-1. Click the link and play
+1. Click [here](https://ggsnipes.github.io/tic-tac-toe/) and play
