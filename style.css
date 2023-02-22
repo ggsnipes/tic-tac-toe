@@ -3,19 +3,49 @@
     /* border: 1px solid red; */
 }
 
-.board {
-    display: flex;
-    /* grid-template-columns: 1fr 1fr 1fr;
-    margin: 1em; */
-    align-content: space-around;
-    gap: 1px 1px;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    height: calc(100px * 3 + 1rem);
-    width: 0px;
+:root {
+	--cell-size: 100px;
 
+	--color: #81c3fd; /* for hover */
+	--color-set: #0275d8; /* when set */
+	--l: 10px; /* X line-width */
+}
+
+body {
+	margin: 0;
+}
+
+.board {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	align-items: center;
+	grid-template-columns: repeat(3, auto)
+}
+
+/* remove border for edges */
+.game:nth-child(1), .game:nth-child(2), .game:nth-child(3) {
+	border-top: none;
+}
+
+.game:nth-child(1), .game:nth-child(4), .game:nth-child(7) {
+	border-left: none;
+}
+
+.game:nth-child(3), .game:nth-child(6), .game:nth-child(9) {
+	border-right: none;
+}
+
+.game:nth-child(7), .game:nth-child(8), .game:nth-child(9) {
+	border-bottom: none;
+}
+
+
+.game.x, .game.circle {
+    cursor: not-allowed
 }
 
 
@@ -30,10 +60,42 @@
 }
 
 .game {
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    order: 3;
-
+	width: var(--cell-size);
+	height: var(--cell-size);
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
 }
 
+
+/* for cross */
+.board.x .game:not(.circle):not(.x):hover {
+	background: linear-gradient(to top right, transparent calc(50% - var(--l) / 2), var(--color) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2)),
+				linear-gradient(to bottom right, transparent calc(50% - var(--l) / 2), var(--color) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2));
+	background-size: 80% 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+/* for cross (set) */
+.game:not(.circle).x {
+	background: linear-gradient(to top right, transparent calc(50% - var(--l) / 2), var(--color-set) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2)),
+				linear-gradient(to bottom right, transparent calc(50% - var(--l) / 2), var(--color-set) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2));
+	background-size: 80% 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* for circle */
+.board.circle .game:not(.circle):not(.x):hover {	
+	background: radial-gradient(var(--color) 60%, transparent 60%);
+}
+
+/* for circle (set) */
+.game:not(.x).x {
+	background: radial-gradient(var(--color-set) 60%, transparent 60%);
+}
