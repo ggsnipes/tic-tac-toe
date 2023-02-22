@@ -11,9 +11,19 @@ section {
 
 
 
+
+.click {
+    background-color: aliceblue;
+}
+
+.winner {
+    background-color: green;
+}
+
 .game {
     width: 100px;
     height: 100px;
     border: 1px solid black;
 
 }
+
