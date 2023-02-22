@@ -2,6 +2,7 @@ console.log(`this is not good`)
 
 const gameField = document.querySelectorAll('.game')
 const para = document.querySelector('p')
+const clickWin = document.querySelectorAll('.click')
 
 
 function playGame (event) {
@@ -18,6 +19,7 @@ function playGame (event) {
         gameField.forEach (div => 
             div.classList.add('winner'))
     } else {
+        para.textContent = ''
         gameField.forEach (div => 
             div.classList.remove('winner'))
     }
