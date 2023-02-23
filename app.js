@@ -8,6 +8,7 @@ const player1Class = 'x'
 const player2Class = 'circle'
 const board = document.getElementsByClassName('board')
 const restartBtn = document.querySelector('.restart')
+const score = document.querySelector('.score')
 let isPlayer2Turn = false
 let player1Score = 0
 let player2Score = 0
@@ -37,9 +38,9 @@ function gameStart () {
         box.removeEventListener('click', handleGameClick)
         box.addEventListener('click', handleGameClick, {once: true})
     })
-    //setBoardHoverClass()
     paraWinner.textContent = ''
     paraTurn.textContent = "It is X's turn"
+    score.textContent = `X: ${player1Score} || O: ${player2Score}`
 }
 
 //handling the clicks and turns
@@ -56,7 +57,6 @@ function handleGameClick(event) {
     } else {
         paraTurn.textContent = `It is ${isPlayer2Turn ? "X's" : "O's"} turn`
         swapTurns()
-        //setBoardHoverClass()
     }
 }
 
@@ -71,6 +71,18 @@ function endGame(draw) {
     } else {
         paraTurn.textContent = `Game Over`
         paraWinner.textContent = `Player with ${isPlayer2Turn ? "O's" : "X's"} wins`
+    }
+
+
+    //keeping track of the score by checking who won and who's turn it was on.
+    if (draw) {
+        score.textContent = `X: ${player1Score} || O: ${player2Score}`
+    } else if (!isPlayer2Turn) {
+        player1Score++
+        score.textContent = `X: ${player1Score} || O: ${player2Score}`
+    } else {
+        player2Score++
+        score.textContent = `X: ${player1Score} || O: ${player2Score}`
     }
 }
 
@@ -88,19 +100,6 @@ function isDraw() {
 function placeMark (div, currentClass) {
     div.classList.add(currentClass)
 }
-
-
-
-//give a hovering effect to the tiles
-// function setBoardHoverClass () {
-//     board.classList.remove(player1Class)
-//     board.classList.remove(player2Class)
-//     if (isPlayer2Turn) {
-//         board.classList.add(player2Class)
-//     } else {
-//         board.classList.add(player1Class)
-//     }
-// }
 
 
 //swap turns
@@ -124,32 +123,6 @@ function checkWin(currentClass) {
 
 
 
-
-
-
-// function playGame (event) {
-//     let div = event.target
-
-//     if (div.classList.contains('click')) {
-//         div.classList.remove('click')
-//     } else {
-//         div.classList.add('click')
-//     }
-
-//     if (document.querySelectorAll('.click').length == 3) {
-//         paraWinner.textContent = `You are a winner!!`
-//         gameField.forEach (div => 
-//             div.classList.add('winner'))
-//     } else {
-//         paraWinner.textContent = ''
-//         gameField.forEach (div => 
-//             div.classList.remove('winner'))
-//     }
-
-
-// }
-
-
 //starts the game
 gameStart()
 
@@ -158,11 +131,3 @@ gameStart()
 
 //restarts the game
 restartBtn.addEventListener('click', gameStart)
-
-
-
-// restartBtn.addEventListener('click', )
-
-// gameField.forEach(btn => {
-//     btn.addEventListener('click', playGame)
-// })
