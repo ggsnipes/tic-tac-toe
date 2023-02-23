@@ -12,7 +12,7 @@
 	--cell-size: 100px;
 
 	--color: #81c3fd; /* for hover */
-	--color-set: #0275d8; /* when set */
+	--color-set: #214357; /* when set */
 	--l: 10px; /* X line-width */
 }
 
@@ -72,6 +72,7 @@ body {
 .winner {
     /* background-color: green; */
 	font-family: 'Poppins', sans-serif;
+	font-size: 32px;
 }
 
 .game {
@@ -131,7 +132,12 @@ header h1 {
 }
 
 .turn {
-	font-size: 24px;
+	font-size: 32px;
+	font-family: 'Poppins', sans-serif;
+}
+
+.score {
+	font-size: 32px;
 	font-family: 'Poppins', sans-serif;
 }
 
@@ -143,4 +149,5 @@ header h1 {
 	padding: 32px 60px;
 	border: none;
 	font-family: 'Poppins', sans-serif;
+	font-size: 32px;
 }
