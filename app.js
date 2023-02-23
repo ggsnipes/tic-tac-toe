@@ -1,5 +1,3 @@
-console.log(`this is not good`)
-
 //setting all the variables that need to be defined for pressing buttons
 const gameField = document.querySelectorAll('.game')
 const paraWinner = document.querySelector('.winner')
@@ -109,6 +107,15 @@ function swapTurns() {
 }
 
 
+//testing out the hoverover function
+// function aimSquare() {
+//     if (isPlayer2Turn) {
+//         gameField.classList.add('grayx')
+//     } else {
+//         gameField.classList.add('grayCircle')
+//     }
+// }
+
 
 
 //check win conditions
@@ -127,6 +134,12 @@ function checkWin(currentClass) {
 gameStart()
 
 
+
+//testing mouseover and seeing if it works.
+
+// gameField.forEach(hover => {
+//     hover.addEventListener('mousedown', aimSquare)
+// })
 
 
 //restarts the game

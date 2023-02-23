@@ -86,6 +86,7 @@ body {
 }
 
 
+
 /* for cross */
 .board.x .game:not(.circle):not(.x):hover {
 	background: linear-gradient(to top right, transparent calc(50% - var(--l) / 2), var(--color) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2)),
