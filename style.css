@@ -1,7 +1,12 @@
 * {
     box-sizing: border-box;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+
 
 :root {
 	--cell-size: 100px;
@@ -13,17 +18,18 @@
 
 body {
 	margin: 0;
+	background-color: aliceblue;
 }
 
 .board {
-	width: 100vw;
-	height: 100vh;
+	width: auto;
+	height: auto;
 	display: grid;
 	justify-content: center;
 	align-content: center;
 	justify-items: center;
 	align-items: center;
-	grid-template-columns: repeat(3, auto)
+	grid-template-columns: repeat(3, auto);
 }
 
 /* remove border for edges */
@@ -55,8 +61,17 @@ body {
     background-color: aliceblue;
 }
 
+.result {
+	text-align: center;
+	margin: auto;
+	overflow: auto;
+}
+
+
+
 .winner {
-    background-color: green;
+    /* background-color: green; */
+	font-family: 'Poppins', sans-serif;
 }
 
 .game {
@@ -98,4 +113,33 @@ body {
 /* for circle (set) */
 .game:not(.x).circle {
 	background: radial-gradient(var(--color-set) 60%, transparent 60%);
+}
+
+header {
+	text-align: center;
+}
+
+header h1 {
+	font-size: 64px;
+	font-family: 'Poppins', sans-serif;
+}
+
+.turn-indicator {
+	text-align: center;
+	overflow: auto;
+}
+
+.turn {
+	font-size: 24px;
+	font-family: 'Poppins', sans-serif;
+}
+
+
+
+.restart {
+	background-color: black;
+	color: whitesmoke;
+	padding: 32px 60px;
+	border: none;
+	font-family: 'Poppins', sans-serif;
 }

@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
+    </style>
 </head>
 <body>
     
@@ -13,7 +16,7 @@
         <h1>Tic-tac-toe</h1>
     </header>
 
-    <section>
+    <section class="turn-indicator">
         <p class="turn"></p>
     </section>
 
@@ -29,11 +32,9 @@
         <div class="game" data-cell></div>
     </section>
 
-    <p class="winner">
-        
-    </p>
 
-    <section class="post-game">
+    <section class="result">
+        <p class="winner"></p>
         <button class="restart">Restart</button>
     </section>
 

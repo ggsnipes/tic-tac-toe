@@ -9,6 +9,9 @@ const player2Class = 'circle'
 const board = document.getElementsByClassName('board')
 const restartBtn = document.querySelector('.restart')
 let isPlayer2Turn = false
+let player1Score = 0
+let player2Score = 0
+
 const winningCombinations = [
     [0,1,2],
     [3,4,5],
