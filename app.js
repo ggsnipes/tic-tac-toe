@@ -66,9 +66,15 @@ function endGame(draw) {
     if (draw) {
         paraWinner.textContent = "It's a draw"
         paraTurn.textContent = `Game Over`
+        gameField.forEach(box => {
+            box.removeEventListener('click', handleGameClick)
+        })
     } else {
         paraTurn.textContent = `Game Over`
         paraWinner.textContent = `Player with ${isPlayer2Turn ? "O's" : "X's"} wins`
+        gameField.forEach(box => {
+            box.removeEventListener('click', handleGameClick)
+        })
     }
 
 
