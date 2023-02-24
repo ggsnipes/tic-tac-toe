@@ -33,6 +33,7 @@ function gameStart () {
     gameField.forEach(box => {
         box.classList.remove(player1Class)
         box.classList.remove(player2Class)
+        box.classList.remove('game-over')
         box.removeEventListener('click', handleGameClick)
         box.addEventListener('click', handleGameClick, {once: true})
     })
