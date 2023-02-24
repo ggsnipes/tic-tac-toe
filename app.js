@@ -68,12 +68,14 @@ function endGame(draw) {
         paraTurn.textContent = `Game Over`
         gameField.forEach(box => {
             box.removeEventListener('click', handleGameClick)
+            box.classList.add('game-over')
         })
     } else {
         paraTurn.textContent = `Game Over`
         paraWinner.textContent = `Player with ${isPlayer2Turn ? "O's" : "X's"} wins`
         gameField.forEach(box => {
             box.removeEventListener('click', handleGameClick)
+            box.classList.add('game-over')
         })
     }
 
