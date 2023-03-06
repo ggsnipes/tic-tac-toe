@@ -7,9 +7,11 @@ const player2Class = 'circle'
 const board = document.getElementsByClassName('board')
 const restartBtn = document.querySelector('.restart')
 const score = document.querySelector('.score')
+const cpuPlayBtn = document.querySelector('.cpu-play')
 let isPlayer2Turn = false
 let player1Score = 0
 let player2Score = 0
+let cpuPlaying = false
 
 const winningCombinations = [
     [0,1,2],
@@ -23,6 +25,23 @@ const winningCombinations = [
 ]
 
 
+// function cpuPlayTurn() {
+//     let cpuChoice = Math.floor(Math.random() * 9 )
+//     cpuPlaying = true
+
+//     while(cpuPlaying){
+//         if (isPlayer2Turn == true){
+//             if (gameField[cpuChoice] != player1Class) {
+//                 gameField[cpuChoice].classList.add(player2Class)
+//                 swapTurns()
+//             } else {
+//                 return null
+//             }
+//         }
+//     }
+
+
+// }
 
 
 
@@ -153,3 +172,4 @@ gameStart()
 
 //restarts the game
 restartBtn.addEventListener('click', gameStart)
+cpuPlayBtn.addEventListener('click', cpuPlayTurn)
